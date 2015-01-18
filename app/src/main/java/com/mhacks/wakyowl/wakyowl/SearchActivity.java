@@ -1,6 +1,7 @@
 package com.mhacks.wakyowl.wakyowl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -170,6 +171,12 @@ public class SearchActivity extends Activity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
+            Intent myIntent = new Intent(SearchActivity.this, MainActivity.class);
+
+            SearchActivity.this.startActivity(myIntent);
+
+
         }
     }
 }
