@@ -62,6 +62,7 @@
             android:text="Search"
             android:id="@+id/searchButtonId"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp"
+            android:onClick="search"/>
     </LinearLayout>
 </RelativeLayout>
