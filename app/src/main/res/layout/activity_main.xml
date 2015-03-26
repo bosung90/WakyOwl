@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Destination"
-                android:id="@+id/destTextViewId"
                 android:maxWidth="100dp"
                 android:minWidth="50dp" />
 
@@ -33,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:id="@+id/textView"
+                android:id="@+id/destTextViewId"
                 android:layout_marginLeft="10dp" />
 
         </LinearLayout>

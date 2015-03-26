@@ -5,9 +5,11 @@ package com.mhacks.wakyowl.wakyowl;
  */
 public class Utilities {
 
-    public static Double lat;
-    public static Double lon;
+    public static double currentLat;
+    public static double currentLon;
     public static String address;
+    public static double destLat;
+    public static double destLon;
 
 
 }

@@ -46,8 +46,8 @@ public class SearchActivity extends Activity {
         gpsTracker.getLocation();
         double lat = gpsTracker.getLatitude();
         double lon = gpsTracker.getLongitude();
-        Utilities.lat = lat;
-        Utilities.lon = lon;
+        Utilities.currentLat = lat;
+        Utilities.currentLon = lon;
         EditText editText = (EditText) findViewById(R.id.fromEditTextId);
         editText.setText("Longitude is:" + lon + " Latitidue is:" + lat);
     }
@@ -151,17 +151,20 @@ public class SearchActivity extends Activity {
                         +APIKEY;
                 StringBuilder uriBuilder = new StringBuilder(queryUri);
                 String result = makeJSONQuery(uriBuilder);
-                System.out.println(result);
 
                 JSONObject root = new JSONObject(result);
-                JSONArray resultArray = root.getJSONArray("result");
+                JSONArray resultArray = root.getJSONArray("results");
                 JSONObject resultObject = resultArray.getJSONObject(0);
                 String address = resultObject.getString("formatted_address");
+                Utilities.address = address;
+                System.out.println(address);
                 JSONObject geometryObject = resultObject.getJSONObject("geometry");
                 JSONObject locationObject = geometryObject.getJSONObject("location");
-                String lat = locationObject.getString("lat");
-                String lon = locationObject.getString("lng");
-                Utilities.address = address;
+                double lat = locationObject.getDouble("lat");
+                double lon = locationObject.getDouble("lng");
+                Utilities.destLat = lat;
+                Utilities.destLon = lon;
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

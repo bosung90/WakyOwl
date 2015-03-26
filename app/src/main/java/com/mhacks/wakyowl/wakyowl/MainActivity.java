@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView address = (TextView) findViewById(R.id.destTextViewId);
-        address.setText("" + address);
+        address.setText("" + Utilities.address);
     }
 
 
